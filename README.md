@@ -63,5 +63,3 @@ If you find this extension useful, consider giving it a star on GitHub!
 ## 📄 License
 
 This project is licensed under the MIT License.
-
----
