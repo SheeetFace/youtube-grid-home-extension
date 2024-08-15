@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Grid Settings</title>
+    <style>
+        body {
+            width: 300px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 10px;
+            background: #000000;
+            background: -webkit-linear-gradient(0deg, #000000 0%, #512126 50%, #ec3636 100%);
+            background: linear-gradient(0deg, #000000 0%, #512126 50%, #ec3636 100%);
+            margin: 0;
+            overflow: hidden;
+            color: #ccc;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 1.3rem;
+            color: #000000;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #4CAF50; 
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; 
+            width: 20px;
+            height: 20px;
+            background: #ec3636; 
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+
+        .toggle-switch {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #000000;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            left: 4px;
+            bottom: 4px;
+            background-color: #ec3636;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #4CAF50;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: .5rem;
+            gap: 1rem;
+        }
+
+        .container-range {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+        a {
+            font-size: .8rem;
+            text-align: center;
+            color: #ec3636;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+    <body>
+        <label>
+            <div class="toggle-switch">
+                <input type="checkbox" id="enableExtension">
+                <span class="slider"></span>
+            </div>
+            Enable Extension
+        </label>
+        <div>
+            <div class="container">
+                <span>Video Preview Width: <span id="widthValue"></span>px</span>
+                <div class="container-range">
+                    <span>200</span>
+                    <input type="range" id="widthSlider" min="200" max="800" step="10">
+                    <span>800</span>
+                </div>
+            </div>
+        </div>
+        <a href="https://github.com/SheeetFace/youtube-grid-home-extension" target="_blank">You can thank me by simply putting a STAR on GitHub</a>
+
+        <script src="popup.js"></script>
+    </body>
+
+</html>
+
